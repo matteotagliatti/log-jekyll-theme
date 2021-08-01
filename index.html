@@ -1,0 +1,122 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="shortcut icon" href="#">
+    
+    <link href="/assets/css/normalize.css" rel="stylesheet">
+    <link href="/assets/css/log.css" rel="stylesheet">
+
+    <title>{{ site.title }} - {{ site.author }}</title>
+    <meta name="description" content="{{ site.description }}">
+</head>
+
+<body class="home-blog">
+
+    <div class="container">
+        <div class="blackbox">
+            <span class="blog-title">> Hi</span>
+            <br>
+            <span class="blog-title">> {{ site.description }}</span>
+        </div>
+
+        {% for log in site.data.log %}
+        <div class="blog-post">
+            <h1 class="blog-post-title">{{ log.data }}</a></h1>
+            <div class="blog-post-text">
+                
+                {% if log.book %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> Books
+                </div>
+                    <ul>
+                        {% assign i = 0 %}
+                        {% for book in log.book %}
+                        <li>{{ log.book[i] }}</li>
+                        {% assign i = i | plus:1 %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if log.music %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> Music
+                </div>
+                    <ul>
+                        <li>{{ log.music }}</li>
+                    </ul>
+                {% endif %}
+
+                {% if log.movie %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> Movies
+                </div>
+                    <ul>
+                        <li>{{ log.movie }}</li>
+                    </ul>
+                {% endif %}
+
+                {% if log.tvserie %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> TV Series
+                </div>
+                    <ul>
+                        <li>{{ log.tvserie }}</li>
+                    </ul>
+                {% endif %}
+
+                {% if log.podcast %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> Podcasts
+                </div>
+                    <ul>
+                        <li>{{ log.podcast }}</li>
+                    </ul>
+                {% endif %}
+
+                {% if log.youtube %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> YouTube
+                </div>
+                    <ul>
+                        <li>{{ log.youtube }}</li>
+                    </ul>
+                {% endif %}
+
+                {% if log.article %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> Articles
+                </div>
+                    <ul>
+                        <li>{{ log.article }}</li>
+                    </ul>
+                {% endif %}
+
+                {% if log.manga %}
+                <div class="section">
+                    <span class="passive">&gt;_</span> Mangas
+                </div>
+                    <ul>
+                        <li>{{ log.manga }}</li>
+                    </ul>
+                {% endif %}
+
+                <div class="blog-post-bottom"></div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+        <div style="margin-bottom: 20px; margin-left: 10px;"></div>
+
+    </div>
+
+</body>
+
+</html>
