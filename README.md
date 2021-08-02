@@ -19,6 +19,23 @@ Write all your media in `_data/log.yml` in the following categories:
 - `article`
 - `manga`
 
+### Add a category
+
+You can add a category in the `log.yml` file and add the relative section in the `index.html`. Replace `[category]` with your new category without [].
+
+Example of a section in `index.html`.
+
+```html
+{% if log.[category] %}
+<div class="section">
+  <span class="passive">&gt;_</span> Category
+</div>
+<ul>
+  <li>{{ log.[category] }}</li>
+</ul>
+{% endif %}
+```
+
 ## Highlight
 
 A `<span class="title">` can be used for highlight a title.
